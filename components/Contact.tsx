@@ -25,7 +25,7 @@ export default function Contact() {
           >
             <div className="mb-12 text-center">
               <h2 className="font-serif text-4xl md:text-5xl text-white mb-4">Vamos Conversar</h2>
-              <p className="text-metallic">Tem um projeto em mente? Me mande uma mensagem.</p>
+              <p className="text-metallic">Quer transmitir mais autoridade e confiança aos seus clientes? Peça um orçamento sem compromisso.</p>
             </div>
 
             <form onSubmit={handleSubmit} className="flex flex-col gap-6">

@@ -7,7 +7,7 @@ interface ProjectProps {
   title: string;
   category: string;
   tech: string[];
-  imageSrc?: string; // Tornando opcional para não quebrar enquanto você não tem as imagens
+  imageSrc?: string; 
   link?: string;
 }
 
@@ -47,13 +47,13 @@ export default function ProjectCard({ title, category, tech, imageSrc, link }: P
       style={{ rotateY, rotateX, transformStyle: "preserve-3d" }}
       className="relative group w-full h-[400px] rounded-2xl bg-charcoal border border-white/[0.05] overflow-hidden"
     >
-      {/* Imagem de Fundo Otimizada (Lazy Load por padrão no Next.js) */}
+      {/* Imagem de Fundo Otimizada */}
       {imageSrc && (
         <Image 
           src={imageSrc} 
           alt={title} 
           fill 
-          className="object-cover opacity-40 group-hover:opacity-20 transition-opacity duration-500 group-hover:scale-105" 
+          className="object-cover opacity-40 group-hover:opacity-20 transition-opacity duration-500 group-hover:scale-105 z-0" 
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
       )}
@@ -84,7 +84,6 @@ export default function ProjectCard({ title, category, tech, imageSrc, link }: P
             ))}
           </div>
           
-          {/* Botão de Link Dinâmico */}
           {link && imageSrc && (
             <div className="mt-auto inline-block w-fit pointer-events-auto">
               <LinkPreview url={link} imageSrc={imageSrc}>
