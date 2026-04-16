@@ -1,4 +1,5 @@
 'use client'
+import Image from 'next/image'
 import { motion, Variants } from 'framer-motion'
 
 export default function Hero() {
@@ -27,7 +28,8 @@ export default function Hero() {
   }
 
   return (
-    <section className="relative h-screen flex flex-col items-center justify-center overflow-hidden">
+    <section className="relative h-screen flex flex-col items-center justify-center overflow-hidden z-0">
+      
       {/* Background Gradient Orbs */}
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-electric/10 rounded-full blur-[120px] mix-blend-screen" />
       <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-champagne/5 rounded-full blur-[150px] mix-blend-screen" />

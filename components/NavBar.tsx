@@ -1,6 +1,7 @@
 'use client'
 import { useState } from 'react'
 import { motion, useScroll, useMotionValueEvent, AnimatePresence } from 'framer-motion'
+import Image from 'next/image'
 
 export default function Navbar() {
   const { scrollY } = useScroll()
@@ -29,15 +30,25 @@ export default function Navbar() {
         transition={{ duration: 0.35, ease: "easeInOut" }}
         className="fixed top-0 left-0 right-0 z-50 flex justify-between items-center px-6 md:px-12 py-6 bg-charcoal/80 backdrop-blur-md border-b border-white/[0.05]"
       >
-        <div className="font-serif text-2xl font-bold text-white tracking-wider z-50 relative">
-          GF<span className="text-champagne">.</span>
+
+        <div className="font-serif text-2xl font-bold text-white tracking-wider z-50 relative flex items-center gap-3">
+          {/* 3. Adicione sua foto de perfil */}
+          <Image
+            src="/pfp.png" // Caminho para sua foto na pasta public
+            alt="Sua Foto de Perfil" // Descrição da imagem para acessibilidade
+            width={40} // Largura desejada em pixels
+            height={40} // Altura desejada em pixels
+            className="rounded-full border border-champagne/30" // Estilo circular com borda sutil
+          />
+          {/* Seu nome */}
+          Gustavo Fermino<span className="text-champagne"></span>
         </div>
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex gap-8">
           {links.map((item) => (
-            <a 
-              key={item} 
+            <a
+              key={item}
               href={`#${item.toLowerCase()}`}
               className="relative text-sm text-metallic hover:text-white transition-colors duration-300 group pb-1"
             >
@@ -46,9 +57,9 @@ export default function Navbar() {
             </a>
           ))}
         </nav>
-        
+
         {/* Mobile Toggle Button */}
-        <button 
+        <button
           onClick={() => setMenuOpen(!menuOpen)}
           className="md:hidden text-metallic z-50 relative focus:outline-none"
         >
