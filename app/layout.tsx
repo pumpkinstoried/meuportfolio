@@ -40,7 +40,7 @@ export default function RootLayout({
         <SmoothScroll />
         
         {/* Film Grain Overlay */}
-<div className="pointer-events-none fixed inset-0 z-50 h-full w-full opacity-8 bg-[url('/noise.jpg')] bg-repeat"></div>
+<div className="pointer-events-none fixed inset-0 z-0 h-full w-full opacity-8 bg-[url('/noise.jpg')] bg-repeat"></div>
         
         <CustomCursor />
         {children}

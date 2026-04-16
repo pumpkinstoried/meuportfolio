@@ -17,7 +17,7 @@ export default function Navbar() {
     }
   })
 
-  const links = ['Projetos', 'Tech', 'Contato']
+const links = ['Projetos', 'Sobre mim', 'Contato']
 
   return (
     <>
@@ -44,19 +44,20 @@ export default function Navbar() {
           Gustavo Fermino<span className="text-champagne"></span>
         </div>
 
-        {/* Desktop Nav */}
-        <nav className="hidden md:flex gap-8">
-          {links.map((item) => (
-            <a
-              key={item}
-              href={`#${item.toLowerCase()}`}
-              className="relative text-sm text-metallic hover:text-white transition-colors duration-300 group pb-1"
-            >
-              {item}
-              <span className="absolute left-1/2 bottom-0 w-0 h-[1px] bg-champagne -translate-x-1/2 transition-all duration-300 ease-out group-hover:w-full" />
-            </a>
-          ))}
-        </nav>
+      {/* Desktop Nav */}
+<nav className="hidden md:flex gap-8">
+  {links.map((item) => (
+    <a
+      key={item}
+      // Esta lógica garante que o link seja #sobre quando o texto for "Sobre mim"
+      href={`#${item === 'Sobre mim' ? 'sobre' : item.toLowerCase()}`}
+      className="relative text-sm text-metallic hover:text-white transition-colors duration-300 group pb-1"
+    >
+      {item}
+      <span className="absolute left-1/2 bottom-0 w-0 h-[1px] bg-champagne -translate-x-1/2 transition-all duration-300 ease-out group-hover:w-full" />
+    </a>
+  ))}
+</nav>
 
         {/* Mobile Toggle Button */}
         <button
@@ -79,18 +80,17 @@ export default function Navbar() {
           >
             <nav className="flex flex-col gap-8 text-center">
               {links.map((item, i) => (
-                <motion.a
-                  key={item}
-                  href={`#${item.toLowerCase()}`}
-                  onClick={() => setMenuOpen(false)}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: i * 0.1 + 0.3 }}
-                  className="font-serif text-4xl text-white hover:text-champagne transition-colors"
-                >
-                  {item}
-                </motion.a>
-              ))}
+  <motion.a
+    key={item}
+    // Garante que o link aponte para #sobre quando o texto for "Sobre mim"
+    href={`#${item === 'Sobre mim' ? 'sobre' : item.toLowerCase()}`}
+    onClick={() => setMenuOpen(false)}
+    // ... restante das props
+    className="font-serif text-4xl text-white hover:text-champagne transition-colors"
+  >
+    {item}
+  </motion.a>
+))}
             </nav>
           </motion.div>
         )}

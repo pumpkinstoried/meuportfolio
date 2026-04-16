@@ -21,7 +21,7 @@ const projects = [
     link: 'https://pumpkinstoried.github.io/clinica-portfolio/',
   },
   {
-    title: 'Litoral Imóveis',
+    title: 'Imobiliária Exemplo',
     category: 'Imobiliária',
     imageSrc: '/imoveis.jpg',
     link: 'https://pumpkinstoried.github.io/clinica-portfolio/',
