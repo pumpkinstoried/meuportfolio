@@ -39,7 +39,7 @@ export default function Hero() {
         className="z-10 text-center"
       >
         <motion.p variants={child} className="text-metallic tracking-[0.3em] uppercase text-sm mb-6">
-          Engenharia Front-end de Elite
+          Desenvolvedor Full-stack
         </motion.p>
         
         <h1 className="font-serif text-6xl md:text-8xl font-medium text-white flex justify-center overflow-hidden">
@@ -52,7 +52,7 @@ export default function Hero() {
         
         <motion.div variants={child} className="mt-8">
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-champagne via-white to-metallic text-xl md:text-2xl font-light">
-            Construindo experiências digitais luxuosas e performáticas.
+            Construindo sites para o seu negócio transmitir a autoridade e confiança que ele merece.
           </span>
         </motion.div>
       </motion.div>

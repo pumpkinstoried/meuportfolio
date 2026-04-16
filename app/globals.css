@@ -16,7 +16,7 @@
   --color-charcoal: #0a0a0a;
   --color-metallic: #8c8c8c;
   --color-champagne: #F7E7CE;
-  --color-electric: z#0052FF;
+  --color-electric: #0052FF;
 }
 
 @media (prefers-color-scheme: dark) {

@@ -6,12 +6,11 @@ import LinkPreview from './LinkPreview'
 interface ProjectProps {
   title: string;
   category: string;
-  tech: string[];
   imageSrc?: string; 
   link?: string;
 }
 
-export default function ProjectCard({ title, category, tech, imageSrc, link }: ProjectProps) {
+export default function ProjectCard({ title, category, imageSrc, link }: ProjectProps) {
   const x = useMotionValue(0)
   const y = useMotionValue(0)
   const mouseX = useMotionValue(0)
@@ -45,7 +44,7 @@ export default function ProjectCard({ title, category, tech, imageSrc, link }: P
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       style={{ rotateY, rotateX, transformStyle: "preserve-3d" }}
-      className="relative group w-full h-[400px] rounded-2xl bg-charcoal border border-white/[0.05] overflow-hidden"
+      className="relative z-20 group w-full aspect-video rounded-2xl bg-charcoal border border-white/[0.05] overflow-hidden"
     >
       {/* Imagem de Fundo Otimizada */}
       {imageSrc && (
@@ -53,7 +52,7 @@ export default function ProjectCard({ title, category, tech, imageSrc, link }: P
           src={imageSrc} 
           alt={title} 
           fill 
-          className="object-cover opacity-40 group-hover:opacity-20 transition-opacity duration-500 group-hover:scale-105 z-0" 
+          className="object-cover opacity-100 group-hover:opacity-40 transition-opacity duration-500 group-hover:scale-105 z-0" 
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
       )}
@@ -77,11 +76,7 @@ export default function ProjectCard({ title, category, tech, imageSrc, link }: P
           <h3 className="font-serif text-3xl text-champagne mb-2">{title}</h3>
           <p className="text-metallic text-sm mb-4">{category}</p>
           <div className="flex gap-2 flex-wrap mb-6">
-            {tech.map((t) => (
-              <span key={t} className="text-xs px-2 py-1 rounded-full border border-white/10 bg-white/5 text-white">
-                {t}
-              </span>
-            ))}
+  
           </div>
           
           {link && imageSrc && (
