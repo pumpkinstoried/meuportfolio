@@ -12,19 +12,19 @@ const projects = [
     title: 'Site exemplo de advocacia',
     category: 'Jurídico',
     imageSrc: '/advocacia.jpg', // Mesma coisa para os outros
-    link: 'https://pumpkinstoried.github.io/clinica-portfolio/', 
+    link: 'https://pumpkinstoried.github.io/advogadasite-portfolio/', 
   },
   {
     title: 'Dentista Guilherme Sanchez',
     category: 'Odontologia',
     imageSrc: '/odonto.jpg',
-    link: 'https://pumpkinstoried.github.io/clinica-portfolio/',
+    link: 'https://kanerfx.github.io/dr_guilherme_sanchez_consultorio_odontologico/',
   },
   {
     title: 'Imobiliária Exemplo',
     category: 'Imobiliária',
     imageSrc: '/imoveis.jpg',
-    link: 'https://pumpkinstoried.github.io/clinica-portfolio/',
+    link: 'https://pumpkinstoried.github.io/imobiliaria-portfolio/',
   },
 ]
 
