@@ -7,10 +7,10 @@ import ProjectCard from './ProjectCard'
 const projects = [
   {
     title: 'FerminoPMS Dashboard',
-    category: 'SaaS / Dashboard',
+    category: 'Gestão de Hoteis e pousadas',
     description:
       'Gestão operacional e automações para hotelaria em uma experiência centralizada.',
-    imageSrc: '/ferminopms.jpg',
+    imageSrc: '/ferminopms.png',
     link: '#',
   },
 
@@ -236,7 +236,7 @@ export default function Portfolio() {
       </div>
 
       {/* Carousel */}
-      <div
+       <div
         ref={carouselRef}
         onScroll={handleScroll}
         className="
@@ -256,11 +256,13 @@ export default function Portfolio() {
           [scrollbar-width:none]
         "
       >
+        <div className="shrink-0 w-6 md:w-12" aria-hidden="true" />
+
         {extendedProjects.map((project, index) => (
           <div
             key={`${project.title}-${index}`}
             className="
-              w-[88vw]
+              w-[calc(100vw-3rem)]
               shrink-0
               snap-center
               md:w-[48vw]
@@ -276,6 +278,8 @@ export default function Portfolio() {
             />
           </div>
         ))}
+
+        <div className="shrink-0 w-6 md:w-12" aria-hidden="true" />
       </div>
     </section>
   )

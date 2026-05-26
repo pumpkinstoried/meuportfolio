@@ -252,26 +252,36 @@ export default function ProjectCard({
               group-hover:opacity-100
             "
           >
-            <Link
-              href={link}
-              target="_blank"
-              className="
-                inline-flex
-                items-center
-                gap-3
-                text-sm
-                uppercase
-                tracking-[0.2em]
-                text-[#E7D2AE]
-                transition-opacity
-                duration-300
-                hover:opacity-70
-              "
-            >
-              Explorar Projeto
+            {title === 'FerminoPMS Dashboard' ? (
+              <span
+                className={
+                  "inline-flex items-center gap-3 text-sm uppercase tracking-[0.2em] text-[#E7D2AE] transition-opacity duration-300"
+                }
+              >
+                <span className="text-lg">Em desenvolvimento</span>
+              </span>
+            ) : (
+              <Link
+                href={link}
+                target="_blank"
+                className="
+                  inline-flex
+                  items-center
+                  gap-3
+                  text-sm
+                  uppercase
+                  tracking-[0.2em]
+                  text-[#E7D2AE]
+                  transition-opacity
+                  duration-300
+                  hover:opacity-70
+                "
+              >
+                <>Explorar Projeto</>
 
-              <span className="text-lg">→</span>
-            </Link>
+                <span className="text-lg">→</span>
+              </Link>
+            )}
           </div>
         )}
       </div>
