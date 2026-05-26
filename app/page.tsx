@@ -2,6 +2,7 @@ import Navbar from '@/components/NavBar'
 import Hero from '@/components/Hero'
 import TechStack from '@/components/TechStack'
 import Portfolio from '@/components/Portfolio'
+import Process from '@/components/Process'
 import About from '@/components/About' 
 import Contact from '@/components/Contact'
 import Footer from '@/components/Footer'
@@ -15,6 +16,9 @@ export default function Home() {
         <Hero />
         <div id="tech">
           <TechStack />
+        </div>
+        <div id='processo'>
+          <Process />
         </div>
         <div id="projetos">
           <Portfolio />
