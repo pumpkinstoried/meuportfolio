@@ -238,7 +238,7 @@ export default function Hero() {
           <div className="relative w-full max-w-[500px] aspect-square">
 
             {/* Glow */}
-            <div className="absolute inset-0 bg-champagne/10 blur-[100px] rounded-full" />
+            <div className="absolute inset-0 bg-[#001f54]/30 blur-[100px] rounded-full" />
 
             {/* Main Glass Card */}
             <motion.div
@@ -262,7 +262,7 @@ export default function Hero() {
                 fill
                 sizes = "(max-width: 768px) 50vw, (max-width: 1200px) 50vw, 33vw"
                 priority
-                className="object-cover"
+                className="object-contain"
               />
             </motion.div>
 
@@ -278,19 +278,24 @@ export default function Hero() {
               }}
               className="
                 absolute
-                top-[10%]
-                left-[-10%]
-                w-40
-                h-24
-                rounded-2xl
-                bg-white/[0.04]
-                border
-                border-white/10
-                backdrop-blur-md
+                top-[1%]
+                left-[-05%]
+                w-20
+                h-72
+                rounded-[32px]
+                overflow-hidden
               "
-            />
+            >
+              <Image
+                src="/phonemockup.png"
+                alt="Phone Mockup"
+                fill
+                sizes="(max-width: 768px) 50vw, (max-width: 1200px) 50vw, 33vw"
+                className="object-contain"
+              />
+            </motion.div>
 
-            {/* Floating Card 2 */}
+            {/* Floating iPad Mockup */}
             <motion.div
               animate={{
                 y: [0, -15, 0],
@@ -302,17 +307,23 @@ export default function Hero() {
               }}
               className="
                 absolute
-                bottom-[10%]
-                right-[-10%]
-                w-48
-                h-28
-                rounded-2xl
-                bg-champagne/[0.05]
-                border
-                border-champagne/10
-                backdrop-blur-md
+                bottom-[-5%]
+                right-[-8%]
+                w-56
+                h-72
+                rounded-[40px]
+                overflow-hidden
               "
-            />
+            >
+              <Image
+                src="/tabletmockup.png"
+                alt="iPad 13 Mockup"
+                loading="eager"
+                fill
+                sizes="(max-width: 768px) 50vw, (max-width: 1200px) 50vw, 33vw"
+                className="object-contain"
+              />
+            </motion.div>
           </div>
         </div>
       </div>
