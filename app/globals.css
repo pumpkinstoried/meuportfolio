@@ -26,12 +26,12 @@
   }
 }
 
+/* REMOVED html { overflow: hidden; } from here to fix the sticky scrolling bug */
+
 body {
   background-color: var(--color-charcoal);
   color: #e5e5e5;
   font-family: var(--font-sans), sans-serif;
-  cursor: none; /* Esconde o cursor padrão */
-  overflow-x: hidden;
 }
 
 /* Base styling para o Smooth Scroll do Lenis */
@@ -49,4 +49,20 @@ html.lenis {
 }
 .lenis.lenis-scrolling iframe {
   pointer-events: none;
+}
+
+/* Target the HTML root node instead of an inner body div */
+body::before {
+  content: "";
+  /* 1. ABSOLUTE stops it from following you. It anchors to the top of the document. */
+  position: absolute; 
+  /* 2. INSET: 0 stretches the repeating image across the entire scrollable height of the page. */
+  inset: 0;           
+  background-image: url('/noise.png');
+  background-repeat: repeat;
+  background-size: 100px;
+  opacity: 0.05;
+  pointer-events: none;
+  /* 3. Z-INDEX: 0 forces it BEHIND your `<main className="z-10">` content. */
+  z-index: 0;         
 }

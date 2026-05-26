@@ -6,11 +6,12 @@ import LinkPreview from './LinkPreview'
 interface ProjectProps {
   title: string;
   category: string;
+  description?: string;
   imageSrc?: string; 
   link?: string;
 }
 
-export default function ProjectCard({ title, category, imageSrc, link }: ProjectProps) {
+export default function ProjectCard({ title, category, description, imageSrc, link }: ProjectProps) {
   const x = useMotionValue(0)
   const y = useMotionValue(0)
   const mouseX = useMotionValue(0)
@@ -44,22 +45,25 @@ export default function ProjectCard({ title, category, imageSrc, link }: Project
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       style={{ rotateY, rotateX, transformStyle: "preserve-3d" }}
-      className="relative z-20 group w-full aspect-video rounded-2xl bg-charcoal border border-white/[0.05] overflow-hidden"
+      // 'isolate' e 'ring-1' resolvem o vazamento da linha branca nos cantos arredondados
+      className="relative z-20 group w-full h-[450px] md:h-[500px] rounded-2xl bg-charcoal ring-1 ring-white/[0.05] overflow-hidden shrink-0 isolate"
     >
-      {/* Imagem de Fundo Otimizada */}
+      {/* Imagem de Fundo Otimizada (envolvida em uma div para evitar bleed sub-pixel) */}
       {imageSrc && (
-        <Image 
-          src={imageSrc} 
-          alt={title} 
-          fill 
-          className="object-cover opacity-100 group-hover:opacity-40 transition-opacity duration-500 group-hover:scale-105 z-0" 
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-        />
+        <div className="absolute inset-0 z-0 bg-black">
+          <Image 
+            src={imageSrc} 
+            alt={title} 
+            fill 
+            className="object-cover opacity-80 group-hover:opacity-40 transition-opacity duration-500 group-hover:scale-105" 
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          />
+        </div>
       )}
 
-      {/* Efeito Glow */}
+      {/* Efeito Glow - Alterado para inset-0 para não sair dos limites do card */}
       <motion.div
-        className="pointer-events-none absolute -inset-px rounded-xl opacity-0 transition duration-300 group-hover:opacity-100 z-10"
+        className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 transition duration-300 group-hover:opacity-100 z-10"
         style={{
           background: useMotionTemplate`
             radial-gradient(
@@ -71,16 +75,23 @@ export default function ProjectCard({ title, category, imageSrc, link }: Project
         }}
       />
       
-      <div style={{ transform: "translateZ(50px)" }} className="absolute inset-0 p-8 flex flex-col justify-end z-20">
-        <div className="absolute inset-0 bg-charcoal/40 backdrop-blur-md translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out z-10 flex flex-col justify-end p-8">
-          <h3 className="font-serif text-3xl text-champagne mb-2">{title}</h3>
-          <p className="text-metallic text-sm mb-4">{category}</p>
-          <div className="flex gap-2 flex-wrap mb-6">
-  
-          </div>
+      <div style={{ transform: "translateZ(50px)" }} className="absolute inset-0 flex flex-col justify-end z-20">
+        {/* Overlay de gradiente com base 100% preta para ocultar qualquer corte nas imagens */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-charcoal/80 to-transparent z-10 pointer-events-none" />
+        
+        {/* Conteúdo Informativo */}
+        <div className="relative z-20 flex flex-col justify-end p-6 md:p-8 h-full">
+          <h3 className="font-serif text-2xl md:text-3xl text-champagne mb-1">{title}</h3>
+          <p className="text-champagne text-xs font-bold uppercase tracking-wider mb-4">{category}</p>
+          
+          {description && (
+            <p className="text-gray-300 text-sm md:text-base leading-relaxed mb-6 line-clamp-3">
+              {description}
+            </p>
+          )}
           
           {link && imageSrc && (
-            <div className="mt-auto inline-block w-fit pointer-events-auto">
+            <div className="inline-block w-fit pointer-events-auto">
               <LinkPreview url={link} imageSrc={imageSrc}>
                 Visualizar Projeto
               </LinkPreview>

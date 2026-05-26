@@ -10,7 +10,8 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <main className="relative z-10 pt-20"> {/* pt-20 para compensar o header fixo */}
+      {/* Adicionado overflow-x-hidden aqui */}
+      <main className="relative z-10 pt-20 overflow-x-hidden"> 
         <Hero />
         <div id="tech">
           <TechStack />

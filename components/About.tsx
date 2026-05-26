@@ -25,10 +25,10 @@ export default function About() {
           </h2>
           <div className="space-y-4 text-lg text-gray-300">
             <p>
-              Sou um desenvolvedor de software baseado em Garopaba - SC, com o foco em criar soluções eficientes e automatizadas. Tenho experiência profunda no desenvolvimento de aplicações escaláveis, utilizando tecnologias como Flutter, Dart, Firebase, além da criação de sites rápidos.
+              Sou um desenvolvedor de software baseado em Garopaba - SC, com o foco em criar soluções eficientes e automatizadas únicas ao seu negócio. Tenho experiência profunda no desenvolvimento de aplicações e sistemas escaláveis, além da criação de sites.
             </p>
             <p>
-              A minha abordagem junta a escrita de código limpo com eficiência operacional, procurando sempre construir produtos que resolvam problemas reais e escalem de forma sustentável.
+              A minha abordagem junta a escrita de código limpo com eficiência operacional, procurando sempre construir produtos que resolvam problemas e desafios reais e escalem de forma sustentável.
             </p>
           </div>
         </div>

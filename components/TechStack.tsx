@@ -2,7 +2,7 @@
 import { motion } from 'framer-motion'
 
 const technologies = [
-"React", "Tailwind CSS", "Framer Motion", "Node.js", "Firebase", "Git", "React Native", "Flutter", "JavaScript"
+"React", "Tailwind CSS", "Framer Motion", "Node.js", "Firebase", "Git", "Flutter", "TypeScript"
 ]
 
 export default function TechStack() {
