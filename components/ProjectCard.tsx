@@ -85,7 +85,7 @@ export default function ProjectCard({
       {imageSrc && (
         <div className="absolute inset-0 overflow-hidden">
           <motion.div
-            className="h-full w-full"
+            className="relative h-full w-full"
             style={{
               transform: 'translateZ(0)',
             }}

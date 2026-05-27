@@ -254,6 +254,9 @@ export default function Hero() {
               inset-0
               rounded-[40px]
               overflow-hidden
+              transform
+              scale-95
+              md:scale-100
             "
             >
               <Image
@@ -279,11 +282,16 @@ export default function Hero() {
               className="
                 absolute
                 top-[1%]
-                left-[-05%]
-                w-20
-                h-72
+                left-[-5%]
+                w-16
+                h-56
+                md:w-20
+                md:h-72
                 rounded-[32px]
                 overflow-hidden
+                transform
+                scale-90
+                md:scale-100
               "
             >
               <Image
@@ -309,10 +317,15 @@ export default function Hero() {
                 absolute
                 bottom-[-5%]
                 right-[-8%]
-                w-56
-                h-72
+                w-40
+                h-56
+                md:w-56
+                md:h-72
                 rounded-[40px]
                 overflow-hidden
+                transform
+                scale-90
+                md:scale-100
               "
             >
               <Image

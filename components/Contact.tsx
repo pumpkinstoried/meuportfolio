@@ -74,7 +74,7 @@ export default function Contact() {
             md:text-7xl
           "
         >
-          Qual o próximo sistema que vai transformar a sua operação?
+          Automatize o seu negócio e aumente sua produtividade.
         </motion.h2>
 
         {/* Divider */}
