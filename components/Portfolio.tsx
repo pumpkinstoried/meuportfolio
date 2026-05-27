@@ -6,7 +6,7 @@ import ProjectCard from './ProjectCard'
 
 const projects = [
   {
-    title: 'FerminoPMS Dashboard',
+    title: 'FerminoPMS',
     category: 'Gestão de Hoteis e pousadas',
     description:
       'Gestão operacional e automações para hotelaria em uma experiência centralizada.',

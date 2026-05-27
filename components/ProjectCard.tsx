@@ -79,11 +79,11 @@ export default function ProjectCard({
         rotateY,
         transformStyle: 'preserve-3d',
       }}
-      className="group relative isolate h-[430px] w-full overflow-hidden rounded-[30px] border border-white/[0.06] bg-[#080808]"
+      className="group relative isolate h-[430px] w-full overflow-hidden rounded-[30px] bg-[#080808] shadow-none"
     >
       {/* Background Image */}
       {imageSrc && (
-        <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute inset-0 overflow-hidden rounded-[50px]">
           <motion.div
             className="relative h-full w-full"
             style={{
@@ -111,19 +111,20 @@ export default function ProjectCard({
         </div>
       )}
 
-      {/* Dark cinematic overlay */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black via-black/35 to-black/10" />
+      {/* Dark cinematic overlay (slightly transparent blacks) */}
+      <div className="absolute inset-0 rounded-[50px] bg-gradient-to-t from-black/60 via-black/30 to-black/6" />
 
       {/* Soft ambient glow */}
       <div className="absolute inset-0 opacity-0 transition-opacity duration-700 group-hover:opacity-100">
         <motion.div
-          className="absolute inset-0"
+          className="absolute inset-0 rounded-[30px]"
           style={{
             background: useMotionTemplate`
               radial-gradient(
                 500px circle at ${mouseX}px ${mouseY}px,
-                rgba(255,255,255,0.08),
-                transparent 40%
+                rgba(255,255,255,0.08) 0%,
+                rgba(255,255,255,0.08) 40%,
+                rgba(255,255,255,0) 101%
               )
             `,
           }}
@@ -131,7 +132,7 @@ export default function ProjectCard({
       </div>
 
       {/* Bottom vignette */}
-      <div className="absolute inset-x-0 bottom-0 h-[55%] bg-gradient-to-t from-black via-black/80 to-transparent" />
+      <div className="absolute inset-x-0 bottom-0 h-[55%] rounded-b-[30px] bg-gradient-to-t from-black via-black/80 to-transparent" />
 
       {/* Border glow */}
       {/* <div className="absolute inset-0 rounded-[30px] ring-1 ring-inset ring-white/[0.05]" /> */}
@@ -147,7 +148,7 @@ export default function ProjectCard({
           group-hover:opacity-100
         "
       >
-        <div
+            <div
           className="
             absolute
             -left-1/3
@@ -157,6 +158,7 @@ export default function ProjectCard({
             rotate-12
             bg-white/[0.06]
             blur-3xl
+            rounded-[30px]
           "
         />
       </div>
@@ -252,7 +254,7 @@ export default function ProjectCard({
               group-hover:opacity-100
             "
           >
-            {title === 'FerminoPMS Dashboard' ? (
+            {title === 'FerminoPMS' ? (
               <span
                 className={
                   "inline-flex items-center gap-3 text-sm uppercase tracking-[0.2em] text-[#E7D2AE] transition-opacity duration-300"
