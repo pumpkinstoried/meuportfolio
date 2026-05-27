@@ -134,7 +134,7 @@ export default function ProjectCard({
       <div className="absolute inset-x-0 bottom-0 h-[55%] bg-gradient-to-t from-black via-black/80 to-transparent" />
 
       {/* Border glow */}
-      <div className="absolute inset-0 rounded-[30px] ring-1 ring-inset ring-white/[0.05]" />
+      {/* <div className="absolute inset-0 rounded-[30px] ring-1 ring-inset ring-white/[0.05]" /> */}
 
       {/* Floating reflection */}
       <div
