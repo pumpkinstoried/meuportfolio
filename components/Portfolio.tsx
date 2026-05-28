@@ -233,6 +233,15 @@ export default function Portfolio() {
 
         {/* Divider */}
         <div className="h-px w-full bg-gradient-to-r from-white/[0.12] via-white/[0.04] to-transparent" />
+
+        {/* Mobile carousel hint */}
+        <div className="mt-6 flex items-center justify-center md:hidden">
+          <div className="flex items-center gap-3 rounded-full border border-white/[0.08] bg-white/[0.04] px-4 py-2 text-sm text-white/80 backdrop-blur-xl">
+            <ChevronLeft size={16} className="text-white/70" />
+            <span>Deslize para o lado</span>
+            <ChevronRight size={16} className="text-white/70" />
+          </div>
+        </div>
       </div>
 
       {/* Carousel */}
