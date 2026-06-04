@@ -5,6 +5,25 @@ import { ChevronLeft, ChevronRight } from 'lucide-react'
 import ProjectCard from './ProjectCard'
 
 const projects = [
+
+  {
+    title: 'Concierge',
+    category: 'Marketplace estilo uber',
+    description:
+      'Plataforma de agendamento e gestão de serviços de limpeza, conectando clientes a profissionais de forma eficiente.',
+    imageSrc: '/concierge.jpg',
+    link: 'https://play.google.com/store/apps/details?id=com.Concierge.Concierge&hl=pt',
+  },
+
+  {
+    title: 'OdontoHost',
+    category: 'Criação de sites para dentistas',
+    description:
+      'Plataforma de criação de sites para dentistas, com templates personalizáveis e integração de agendamento online.',
+    imageSrc: '/odontohost.png',
+    link: 'https://odontohost.web.app/',
+  },
+
   {
     title: 'FerminoPMS',
     category: 'Gestão de Hoteis e pousadas',
